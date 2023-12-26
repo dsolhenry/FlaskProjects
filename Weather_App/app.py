@@ -1,10 +1,13 @@
+from dotenv import load_dotenv, dotenv_values
 from flask import Flask, render_template, request
 import datetime as dt
+import os
 import requests
 
 # Create Flask app
 app = Flask(__name__)
 
+load_dotenv()
 
 # Route for the home page
 @app.route('/')
@@ -19,7 +22,7 @@ def weather():
         city = request.form['city']
 
         # Replace 'YOUR_API_KEY' with your actual API key
-        api_key = '6d65fc958613647190874ae32953cbfc'
+        api_key = os.getenv("API_KEY")
         base_url = 'http://api.openweathermap.org/data/2.5/weather'
         params = {'q': city, 'appid': api_key, 'units': 'metric'}
 
