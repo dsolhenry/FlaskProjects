@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container card" style="max-width: 540px;">
+        <div class="row g-0 mr-0">
+            <div class="col-md-4 bg-info">
+                <p class="card-text bg-warning"><small class="text-muted"><span>{{ weather.curr_time }}</span></small></p>
+                <img src="https://openweathermap.org/img/wn/{{weather.icon}}@2x.png" alt="{{ weather.description }}">
+            </div>
+            <div class="col-md-8 text-center">
+                <div class="card-body">
+                    <h4 class="card-title">Weather Information</h4>
+                    <h6 class="card-title">
+                        <img src="http://openweathermap.org/images/flags/{{weather.country|lower}}.png" class="img-fluid rounded-start" alt="..."> {{ weather.country }} {{ weather.city }}</h6>
+                    <p class='card-text'>Temperature: {{ weather.temperature }}°C</p>
+                    <p class='card-text'>Humidity: {{ weather.humidity }}</p>
+                    <p class='card-text'>Wind speed: {{ weather.wind_speed }} m/s</p>
+                    <p class='card-text'>Description: {{ weather.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-primary mt-4" href="/" role="button">Search</a>
+{% endblock content %}
+

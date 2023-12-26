@@ -1,0 +1,15 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+    <h1>All Users</h1> 
+    {% for user in users %}
+        <div class="row g-3 m-3">
+            <div class="col-8">
+                <h4>{{user.username}}</h4>
+            </div>
+            <div class="col-4">
+              <a class="btn btn-primary mb-3" href="{{url_for("user.user_delete",id=user.id)}}">Delete</a>
+            </div>
+        </div>
+    {% endfor %} 
+{% endblock content %}

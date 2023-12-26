@@ -1,0 +1,10 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+<h1>Create User</h1>
+<form action="/user/" method="post">
+    <input type="text" name="username" placeholder="Username">
+    <input type="email" name="email" placeholder="Email@email.com">
+    <button type="submit" class="btn btn-primary mb-3">Create</button>
+</form>
+{% endblock content %}

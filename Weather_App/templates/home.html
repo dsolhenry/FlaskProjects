@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Weather App</h1>
+<form class="row g-3 m-3" action="/weather" method="post">
+    <div class="col-8">
+      <input type="text" class="form-control" name="city" placeholder="Enter A City Name">
+    </div>
+    <div class="col-4">
+      <button type="submit" class="btn btn-primary mb-3">Get Weather</button>
+    </div>
+</form>
+{% endblock content %}
+
+
+
+    <h1>Weather App</h1>
+    <form action="/weather" method="post">
+        <label for="city">Enter City:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Get Weather</button>
+    </form>
